@@ -1,0 +1,10 @@
+# CITATION.cff
+cff-version: 1.2.0
+message: "If you use this tool, please cite it as below."
+title: "gha-smell-detector"
+version: "0.1.0"
+authors:
+  - family-names: "Sadiq"
+    given-names: "Usman"
+date-released: 2025-12-07
+repository-code: "https://github.com/usmansadiq786/gha-workflow-smells"
