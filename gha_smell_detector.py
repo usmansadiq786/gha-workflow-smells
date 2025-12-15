@@ -133,8 +133,15 @@ def main():
         all_findings.extend(wf_findings)
 
     # Print detailed findings
+    repo_name = repo_root.name
     for f in all_findings:
-        print(f"[{f['smell']}] {f['file']} :: {f['where']} :: {f['details']}")
+        try:
+            rel_path = os.path.relpath(f["file"], repo_root)
+        except Exception:
+            # Fallback, should not normally happen
+            rel_path = f["file"]
+        pretty_path = f"{repo_name}/{rel_path}"
+        print(f"[{f['smell']}] {pretty_path}\n {f['where']} :: {f['details']}")
 
     # Print summary
     summary = summarize(all_findings)
